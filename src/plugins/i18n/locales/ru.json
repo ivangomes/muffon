@@ -15,7 +15,6 @@
     "videoChannels": "Каналы видео",
     "videoMixes": "Сборники видео",
     "videoPlaylists": "Списки видео",
-    "related": "Связанные",
     "top": "Популярное",
     "topCollection": {
       "artists": "Популярные исполнители",
@@ -74,7 +73,6 @@
       "images": "Изображения {modelName}",
       "lyrics": "Текст {modelName}",
       "videos": "Видео {modelName}",
-      "related": "Связанные с {modelName}",
       "posts": "Публикации {modelName}",
       "library": "Библиотека {modelName}",
       "playlists": "Списки {modelName}",
@@ -199,9 +197,10 @@
       "queue": "Добавить в очередь",
       "savedTracks": "Добавить в сохранённые композиции"
     },
-    "show": {
-      "library": "Показать в библиотеке",
-      "page": "Показать страницу"
+    "goTo": {
+      "video": "Перейти на страницу видео",
+      "library": "Перейти на страницу библиотеки",
+      "page": "Перейти на страницу"
     },
     "deleteFrom": {
       "favorites": "Удалить из избранного",
@@ -477,10 +476,6 @@
       "misc": "Разное",
       "appearance": "С участием",
       "live": "Живые выступления"
-    },
-    "videoTypes": {
-      "video": "Видео",
-      "track": "Композиция"
     }
   },
   "player": {
@@ -777,7 +772,6 @@
       "videoChannels": "Нет каналов видео",
       "videoMixes": "Нет сборников видео",
       "videoPlaylists": "Нет списков видео",
-      "related": "Нет связанных",
       "listeners": "Нет слушателей",
       "images": "Нет изображений",
       "events": "Нет событий",

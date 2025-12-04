@@ -15,7 +15,6 @@
     "videoChannels": "视频频道",
     "videoMixes": "混剪视频",
     "videoPlaylists": "视频播放列表",
-    "related": "相关的",
     "top": "热门",
     "topCollection": {
       "artists": "热门艺人",
@@ -74,7 +73,6 @@
       "images": "{modelName}图片",
       "lyrics": "{modelName}歌词",
       "videos": "{modelName}视频",
-      "related": "{modelName}相关",
       "posts": "{modelName}帖子",
       "library": "{modelName}音乐库",
       "playlists": "{modelName}播放列表",
@@ -198,10 +196,6 @@
       "watched": "添加到视频观看历史",
       "queue": "添加到待播队列",
       "savedTracks": "添加到本地曲库"
-    },
-    "show": {
-      "library": "在音乐库中显示",
-      "page": "显示页面"
     },
     "deleteFrom": {
       "favorites": "从我的最爱中删除",
@@ -477,10 +471,6 @@
       "misc": "其他",
       "appearance": "合作曲目",
       "live": "现场版"
-    },
-    "videoTypes": {
-      "video": "视频",
-      "track": "曲目"
     }
   },
   "player": {
@@ -704,7 +694,9 @@
     },
     "active": "正在导入{count}首曲目，共{counter}首...",
     "success": {
-      "header": "{counter}首曲目已成功导入 | {counter}首曲目已成功导入",
+      "header": {
+        "files": "{counter}首曲目已成功导入 | {counter}首曲目已成功导入"
+      },
       "content": "在添加到音乐库之前，请先预览数据"
     },
     "error": {
@@ -769,7 +761,6 @@
       "videoChannels": "暂无视频频道",
       "videoMixes": "暂无混剪视频",
       "videoPlaylists": "暂无视频播放列表",
-      "related": "暂无相关内容",
       "listeners": "暂无听众",
       "images": "暂无图片",
       "events": "暂无活动",

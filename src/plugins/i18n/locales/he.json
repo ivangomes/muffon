@@ -15,7 +15,6 @@
     "videoChannels": "ערוצי וידאו",
     "videoMixes": "מיקס סרטונים",
     "videoPlaylists": "פלייליסט סרטונים",
-    "related": "דומה",
     "top": "מובילים",
     "topCollection": {
       "artists": "אמנים מובילים",
@@ -74,7 +73,6 @@
       "images": "{modelName} תמונות",
       "lyrics": "{modelName} מילים",
       "videos": "{modelName} סרטונים",
-      "related": "{modelName} דומה",
       "posts": "{modelName} פוסטים",
       "library": "{modelName} ספרייה",
       "playlists": "{modelName} פלייליסטים",
@@ -198,10 +196,6 @@
       "watched": "צפיתי כבר",
       "queue": "הוסף לתור",
       "savedTracks": "הוסף לשירים שמורים"
-    },
-    "show": {
-      "library": "הצג בספרייה",
-      "page": "הצג עמוד"
     },
     "deleteFrom": {
       "favorites": "מחק מהאהובים",
@@ -477,10 +471,6 @@
       "misc": "שונות",
       "appearance": "הופעות",
       "live": "הופעות חיות"
-    },
-    "videoTypes": {
-      "video": "סרטון",
-      "track": "שיר"
     }
   },
   "player": {
@@ -777,7 +767,6 @@
       "videoChannels": "אין ערוצי סרטונים",
       "videoMixes": "אין מיקסים של סרטונים",
       "videoPlaylists": "אין פלייליסטים של סרטונים",
-      "related": "אין דומים",
       "listeners": "אין מאזינים",
       "images": "אין תמונות",
       "events": "אין אירועים",

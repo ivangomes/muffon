@@ -15,7 +15,6 @@
     "videoChannels": "ビデオチャンネル",
     "videoMixes": "ビデオミックス",
     "videoPlaylists": "ビデオプレイリスト",
-    "related": "関連",
     "top": "トップ",
     "topCollection": {
       "artists": "トップアーティスト",
@@ -74,7 +73,6 @@
       "images": "{modelName}画像",
       "lyrics": "{modelName}歌詞",
       "videos": "{modelName}ビデオ",
-      "related": "{modelName}関連",
       "posts": "{modelName}投稿",
       "library": "{modelName}ライブラリ",
       "playlists": "{modelName}プレイリスト",
@@ -198,10 +196,6 @@
       "watched": "視聴済みに追加",
       "queue": "キューに追加",
       "savedTracks": "保存済みトラックに追加"
-    },
-    "show": {
-      "library": "ライブラリで表示",
-      "page": "ページを表示"
     },
     "deleteFrom": {
       "favorites": "お気に入りから削除",
@@ -477,10 +471,6 @@
       "misc": "その他",
       "appearance": "出演",
       "live": "ライブ"
-    },
-    "videoTypes": {
-      "video": "ビデオ",
-      "track": "トラック"
     }
   },
   "player": {
@@ -777,7 +767,6 @@
       "videoChannels": "ビデオチャンネルがありません",
       "videoMixes": "ビデオミックスがありません",
       "videoPlaylists": "ビデオプレイリストがありません",
-      "related": "関連項目がありません",
       "listeners": "リスナーがありません",
       "images": "画像がありません",
       "events": "イベントがありません",

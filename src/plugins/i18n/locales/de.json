@@ -15,7 +15,6 @@
     "videoChannels": "Videokanäle",
     "videoMixes": "Video-Mixe",
     "videoPlaylists": "Videoplaylisten",
-    "related": "Verwandt",
     "top": "Top",
     "topCollection": {
       "artists": "Top Künstler",
@@ -74,7 +73,6 @@
       "images": "{modelName} Bilder",
       "lyrics": "Liedtext von {modelName}",
       "videos": "{modelName} Videos",
-      "related": "{modelName} Verbunden",
       "posts": "{modelName} Posts",
       "library": "{modelName} Bibliothek",
       "playlists": "{modelName} Playlisten",
@@ -199,9 +197,10 @@
       "queue": "Zur Queue hinzufügen",
       "savedTracks": "Zu gespeicherte Titel hinzufügen"
     },
-    "show": {
-      "library": "In Bibliothek anzeigen",
-      "page": "Seite anzeigen"
+    "goTo": {
+      "video": "Zur Videoseite gehen",
+      "library": "Zur Bibliotheksseite gehen",
+      "page": "Zur Seite gehen"
     },
     "deleteFrom": {
       "favorites": "Von Favoriten löschen",
@@ -477,10 +476,6 @@
       "misc": "Sonstige",
       "appearance": "Auftritte",
       "live": "Live"
-    },
-    "videoTypes": {
-      "video": "Video",
-      "track": "Titel"
     }
   },
   "player": {
@@ -777,7 +772,6 @@
       "videoChannels": "Keine Videokanäle",
       "videoMixes": "Keine Video-Mixe",
       "videoPlaylists": "Keine Videoplaylisten",
-      "related": "Keine Verwandten",
       "listeners": "Keine Zuhörer",
       "images": "Keine Bilder",
       "events": "Keine Events",

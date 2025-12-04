@@ -15,7 +15,6 @@
     "videoChannels": "Kanały wideo",
     "videoMixes": "Kompilacje wideo",
     "videoPlaylists": "Playlisty wideo",
-    "related": "Podobne",
     "top": "Top",
     "topCollection": {
       "artists": "Top wykonawcy",
@@ -74,7 +73,6 @@
       "images": "{modelName} Obrazy",
       "lyrics": "{modelName} Teksty",
       "videos": "{modelName} Filmy",
-      "related": "{modelName} Powiązane",
       "posts": "{modelName} Posty",
       "library": "{modelName} Biblioteka",
       "playlists": "{modelName} Playlisty",
@@ -198,10 +196,6 @@
       "watched": "Dodaj do obejrzanych",
       "queue": "Dodaj do kolejki",
       "savedTracks": "Dodaj do zapisanych utworów"
-    },
-    "show": {
-      "library": "Pokaż w bibliotece",
-      "page": "Pokaż stronę"
     },
     "deleteFrom": {
       "favorites": "Usuń z ulubionych",
@@ -477,10 +471,6 @@
       "misc": "Różne",
       "appearance": "Pojawia się ",
       "live": "Na żywo"
-    },
-    "videoTypes": {
-      "video": "Film",
-      "track": "Utwór"
     }
   },
   "player": {
@@ -773,7 +763,6 @@
       "videoChannels": "Brak kanałów wideo",
       "videoMixes": "Brak kompilacji wideo",
       "videoPlaylists": "Brak playlist wideo",
-      "related": "Brak powiązanych",
       "listeners": "Brak słuchaczy",
       "images": "Brak obrazów",
       "events": "Brak wydarzeń",

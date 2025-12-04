@@ -13,6 +13,9 @@
     :is-with-clear-button="isWithClearButton"
     :is-bookmark="isBookmark"
     :is-favorite="isFavorite"
+    :is-with-duration="isWithDuration"
+    :is-with-views-count="isWithViewsCount"
+    :is-with-description="isWithDescription"
   />
 </template>
 
@@ -42,7 +45,10 @@ export default {
     isWithDeleteOption: Boolean,
     isWithClearButton: Boolean,
     isBookmark: Boolean,
-    isFavorite: Boolean
+    isFavorite: Boolean,
+    isWithDuration: Boolean,
+    isWithViewsCount: Boolean,
+    isWithDescription: Boolean
   },
   data () {
     return {

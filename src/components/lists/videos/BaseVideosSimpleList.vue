@@ -5,7 +5,6 @@
     <VideoItem
       v-for="videoData in videosCollection"
       :key="videoData.uuid"
-      :scope="scope"
       :video-data="videoData"
       :is-with-channel-title="isWithChannelTitle"
       :is-with-created="isWithCreated"
@@ -19,6 +18,9 @@
       :is-with-external-link-option="isWithExternalLinkOption"
       :is-with-delete-option="isWithDeleteOption"
       :is-with-clear-button="isWithClearButton"
+      :is-with-duration="isWithDuration"
+      :is-with-views-count="isWithViewsCount"
+      :is-with-description="isWithDescription"
       @link-click="handleLinkClick"
       @clear-button-click="handleClearButtonClick"
     />
@@ -46,10 +48,6 @@ export default {
         return []
       }
     },
-    scope: {
-      type: String,
-      default: 'videos'
-    },
     isWithChannelTitle: Boolean,
     isWithCreated: Boolean,
     profileId: Number,
@@ -61,7 +59,10 @@ export default {
     isWithShareOption: Boolean,
     isWithExternalLinkOption: Boolean,
     isWithDeleteOption: Boolean,
-    isWithClearButton: Boolean
+    isWithClearButton: Boolean,
+    isWithDuration: Boolean,
+    isWithViewsCount: Boolean,
+    isWithDescription: Boolean
   },
   emits: [
     'linkClick',

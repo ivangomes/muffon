@@ -17,11 +17,13 @@
       <BaseVideosList
         :videos="slotProps[scope]"
         :view-id="viewId"
+        is-with-channel-title
         is-with-favorite-option
         is-with-bookmark-option
         is-with-watched-option
         is-with-share-option
         is-with-external-link-option
+        is-with-description
       />
     </template>
   </BasePaginatedSegmentContainer>

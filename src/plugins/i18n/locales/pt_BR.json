@@ -15,7 +15,6 @@
     "videoChannels": "Canais de vídeo",
     "videoMixes": "Mixes de vídeo",
     "videoPlaylists": "Playlists de vídeo",
-    "related": "Relacionados",
     "top": "Top",
     "topCollection": {
       "artists": "Melhores artistas",
@@ -74,7 +73,6 @@
       "images": "Imagens de {modelName}",
       "lyrics": "Letras de {modelName}",
       "videos": "Vídeos de {modelName}",
-      "related": "Relacionados a {modelName}",
       "posts": "Publicações de {modelName}",
       "library": "Biblioteca de {modelName}",
       "playlists": "Playlists de {modelName}",
@@ -198,10 +196,6 @@
       "watched": "Adicionar como assistido",
       "queue": "Adicionar à fila",
       "savedTracks": "Adicionar às faixas salvas"
-    },
-    "show": {
-      "library": "Mostrar na biblioteca",
-      "page": "Mostrar página"
     },
     "deleteFrom": {
       "favorites": "Remover dos favoritos",
@@ -477,10 +471,6 @@
       "misc": "Diversos",
       "appearance": "Participações",
       "live": "Ao vivo"
-    },
-    "videoTypes": {
-      "video": "Vídeo",
-      "track": "Faixa"
     }
   },
   "player": {
@@ -777,7 +767,6 @@
       "videoChannels": "Nenhum canal de vídeo",
       "videoMixes": "Nenhum mix de vídeo",
       "videoPlaylists": "Nenhuma playlist de vídeo",
-      "related": "Nenhum relacionado",
       "listeners": "Nenhum ouvinte",
       "images": "Nenhuma imagem",
       "events": "Nenhum evento",

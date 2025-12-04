@@ -15,10 +15,9 @@
       v-else
     >
       <BaseImage
-        class="rounded-medium video-image-120"
+        class="rounded-medium video-image-100"
         model="video"
         :image="imageData?.small"
-        :is-contained="isTracksScope"
       />
 
       <div class="content">
@@ -37,6 +36,20 @@
           @link-click="handleLinkClick"
           @active-change="handleChannelLinkActiveChange"
         />
+
+        <BaseListCounterSection
+          v-if="isRenderViewsCount"
+          class="description"
+          icon="watch"
+          :count="viewsCount"
+        />
+
+        <BaseDescriptionSection
+          v-if="isRenderDescription"
+          class="description"
+          :description="description"
+          is-small
+        />
       </div>
 
       <BaseSelfIcons
@@ -45,6 +58,12 @@
         :watched-id="watchedId"
         :is-with-favorite-icon="isWithFavoriteIcon"
         :is-with-bookmark-icon="isWithBookmarkIcon"
+      />
+
+      <BaseDurationSection
+        v-if="isRenderDuration"
+        class="description right main-right-small-section"
+        :duration="duration"
       />
 
       <BaseCreatedSection
@@ -98,6 +117,12 @@ import BasePublishDateSection
 import BaseVideoOptionsPopup
   from '@/components/popups/video/BaseVideoOptionsPopup.vue'
 import BaseClearButton from '@/components/buttons/BaseClearButton.vue'
+import BaseDurationSection
+  from '@/components/sections/BaseDurationSection.vue'
+import BaseListCounterSection
+  from '@/components/sections/BaseListCounterSection.vue'
+import BaseDescriptionSection
+  from '@/components/sections/BaseDescriptionSection.vue'
 import {
   main as formatVideoLink
 } from '@/helpers/formatters/links/video'
@@ -115,7 +140,10 @@ export default {
     BaseCreatedSection,
     BasePublishDateSection,
     BaseVideoOptionsPopup,
-    BaseClearButton
+    BaseClearButton,
+    BaseDurationSection,
+    BaseListCounterSection,
+    BaseDescriptionSection
   },
   mixins: [
     selfMixin
@@ -130,10 +158,6 @@ export default {
       type: Object,
       required: true
     },
-    scope: {
-      type: String,
-      default: 'videos'
-    },
     isWithChannelTitle: Boolean,
     isWithCreated: Boolean,
     profileId: Number,
@@ -145,7 +169,10 @@ export default {
     isWithShareOption: Boolean,
     isWithExternalLinkOption: Boolean,
     isWithDeleteOption: Boolean,
-    isWithClearButton: Boolean
+    isWithClearButton: Boolean,
+    isWithDuration: Boolean,
+    isWithViewsCount: Boolean,
+    isWithDescription: Boolean
   },
   emits: [
     'linkClick',
@@ -189,10 +216,36 @@ export default {
     isDeleted () {
       return !!this.videoData.isDeleted
     },
-    isTracksScope () {
+    isRenderDuration () {
       return (
-        this.scope === 'tracks'
+        this.isWithDuration &&
+          this.duration
       )
+    },
+    duration () {
+      return (
+        this.videoData.duration
+      )
+    },
+    isRenderViewsCount () {
+      return (
+        this.isWithViewsCount &&
+          this.viewsCount
+      )
+    },
+    viewsCount () {
+      return (
+        this.videoData.views_count
+      )
+    },
+    isRenderDescription () {
+      return (
+        this.isWithDescription &&
+          this.description
+      )
+    },
+    description () {
+      return this.videoData.description
     }
   },
   methods: {
