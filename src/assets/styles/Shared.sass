@@ -282,9 +282,9 @@
   width: 25px !important
   height: 25px !important
 
-.video-image-100
-  width: 100px !important
-  height: calc(100px / 16 * 9) !important
+.video-image-120
+  width: 120px !important
+  height: calc(120px / 16 * 9) !important
 .video-image-60
   width: 60px !important
   height: calc(60px / 16 * 9) !important
@@ -433,6 +433,9 @@
   &:not(:first-child)
     @extend .main-bottom-extrasmall-section
 
+.main-bottom-tiny-section
+  margin-top: 0.25rem !important
+
 //
 
 [dir="ltr"]
@@ -560,6 +563,17 @@
 .main-list-right-extrasmall-section
   &:not(:first-child)
     @extend .main-right-extrasmall-section
+
+[dir="ltr"]
+  .main-right-tiny-section
+    margin-left: 0.25rem !important
+[dir="rtl"]
+  .main-right-tiny-section
+    margin-right: 0.25rem !important
+
+.main-list-right-tiny-section
+  &:not(:first-child)
+    @extend .main-right-tiny-section
 
 //
 
@@ -803,6 +817,11 @@
     .link-active
       @extend .text-color-base
 
+.ui.list
+  .main-simple-list-item
+    &.disabled
+      @extend .text-color-black
+
 .main-simple-list-item-model-icon
   @extend .main-left-extrasmall-section
 
@@ -866,13 +885,25 @@
   line-height: normal !important
   .header-icon
     &.small
-      @extend .main-left-extrasmall-section
       font-size: 1.2rem !important
   &.massive
     .header-icon
       &.small
-        @extend .main-left-medium-section
         font-size: 2rem !important
+  &:not(.multiline)
+    .header-icon
+      &.small
+        @extend .main-left-extrasmall-section
+    &.massive
+      .header-icon
+        &.small
+          @extend .main-left-medium-section
+  &.multiline
+    @extend .plain-column, .align-items-center
+    .header-icon
+      @extend .no-margin
+    .header-text
+      @extend .main-bottom-tiny-section
 
 .main-dropdown-item
   @extend .middle-aligned, .word-break-break-word

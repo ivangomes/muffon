@@ -156,6 +156,7 @@
     "play": "Play",
     "shuffle": "Shuffle",
     "loop": "Loop",
+    "reset": "Reset",
     "addFrom": {
       "search": "From search",
       "library": "From library"
@@ -665,9 +666,9 @@
       "content": "Now you may go back and login"
     }
   },
-  "anonymous": {
-    "continue": "Continue anonymously",
-    "nickname": "Anonymous"
+  "guest": {
+    "continue": "Continue as a guest",
+    "nickname": "Guest"
   },
   "roles": {
     "creator": "Creator"
@@ -697,6 +698,9 @@
   "recommendation": {
     "similar": "Similar to {counter}:"
   },
+  "get": {
+    "active": "Getting {count} of {counter}..."
+  },
   "import": {
     "lastfm": {
       "historyVisible": "Before importing, make sure your Last.FM listening history is visible."
@@ -708,7 +712,7 @@
         "tracks": "{counter} has been imported | {counter} have been imported",
         "playlists": "{counter} has been imported | {counter} have been imported"
       },
-      "content": "You may want to check the data before saving to library"
+      "content": "You may want to check the data before saving"
     },
     "error": {
       "files": "{counter} could not be imported. Please make sure the metadata format is valid:"
@@ -851,7 +855,9 @@
     "membersCountAsc": "Least members"
   },
   "deletedModel": {
-    "profile": "Deleted profile"
+    "profile": "Deleted profile",
+    "playlist": "Deleted playlist",
+    "community": "Deleted community"
   },
   "events": {
     "created": {

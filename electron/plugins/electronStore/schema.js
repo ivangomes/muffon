@@ -15,70 +15,9 @@ export default {
     type: 'boolean',
     default: false
   },
-  'audio.equalizers': {
+  'audio.equalizerGains': {
     type: 'array',
-    default: [
-      {
-        key: 'lowshelf-30',
-        type: 'lowshelf',
-        frequency: 30,
-        gain: 0
-      },
-      {
-        key: 'peaking-60',
-        type: 'peaking',
-        frequency: 60,
-        gain: 0
-      },
-      {
-        key: 'peaking-125',
-        type: 'peaking',
-        frequency: 125,
-        gain: 0
-      },
-      {
-        key: 'peaking-250',
-        type: 'peaking',
-        frequency: 250,
-        gain: 0
-      },
-      {
-        key: 'peaking-500',
-        type: 'peaking',
-        frequency: 500,
-        gain: 0
-      },
-      {
-        key: 'peaking-1000',
-        type: 'peaking',
-        frequency: 1000,
-        gain: 0
-      },
-      {
-        key: 'peaking-2000',
-        type: 'peaking',
-        frequency: 2000,
-        gain: 0
-      },
-      {
-        key: 'peaking-4000',
-        type: 'peaking',
-        frequency: 4000,
-        gain: 0
-      },
-      {
-        key: 'peaking-8000',
-        type: 'peaking',
-        frequency: 8000,
-        gain: 0
-      },
-      {
-        key: 'highshelf-16000',
-        type: 'highshelf',
-        frequency: 16000,
-        gain: 0
-      }
-    ]
+    default: []
   },
   'discord.richPresenceButtons': {
     type: 'array',
@@ -332,10 +271,6 @@ export default {
     ],
     default: null
   },
-  'profile.isAnonymous': {
-    type: 'boolean',
-    default: false
-  },
   'profile.isRemember': {
     type: 'boolean',
     default: false
@@ -435,6 +370,10 @@ export default {
     default: 'artists'
   },
   'search.isResultsFullSize': {
+    type: 'boolean',
+    default: false
+  },
+  'session.isGuest': {
     type: 'boolean',
     default: false
   },

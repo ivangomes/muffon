@@ -6,7 +6,6 @@ export default function (
     source,
     scope = '',
     counters,
-    isWithTracks,
     page,
     limit
   }
@@ -19,17 +18,13 @@ export default function (
   const params = {
     ...(counters && {
       counters
-    }),
-    ...(isWithTracks && {
-      with_tracks: true
     })
   }
 
   const handleSuccess = (
     response
   ) => {
-    this.userData =
-      response.data.user
+    this.userData = response.data.user
   }
 
   return getRequest.bind(

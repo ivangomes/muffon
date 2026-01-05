@@ -205,25 +205,6 @@ export function isMiddleClick (
   )
 }
 
-export function isStringsIncludeEachOther (
-  firstString,
-  secondString
-) {
-  const firstStringFormatted =
-    firstString.toLowerCase()
-
-  const secondStringFormatted =
-    secondString.toLowerCase()
-
-  return (
-    firstStringFormatted.includes(
-      secondStringFormatted
-    ) || secondStringFormatted.includes(
-      firstStringFormatted
-    )
-  )
-}
-
 export function sanitizeString (
   string
 ) {
@@ -245,3 +226,16 @@ export const isMacos = (
 export const isLinux = (
   systemName === 'linux'
 )
+
+export function wait (
+  milliseconds
+) {
+  return new Promise(
+    resolve => {
+      return setTimeout(
+        resolve,
+        milliseconds
+      )
+    }
+  )
+}

@@ -1,26 +1,16 @@
 import {
-  isLinux
+  wait
 } from '../../helpers/utils.js'
 
-export default function () {
-  let width
+export default async function () {
+  await wait(
+    1
+  )
 
-  let height
-
-  if (isLinux) {
-    const size = mainWindow.getSize()
-
-    width = size[0]
-
-    height = size[1]
-  } else {
-    const size =
-      mainWindow.getContentSize()
-
-    width = size[0]
-
-    height = size[1]
-  }
+  const [
+    width,
+    height
+  ] = mainWindow.getContentSize()
 
   return [
     width,

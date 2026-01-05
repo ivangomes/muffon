@@ -16,7 +16,6 @@
         :text-scope="scope"
         :limit="limit"
         :response-page-limit="responsePageLimit"
-        :is-pagination-simple="isPaginationSimple"
         :is-with-infinite-scroll="isWithInfiniteScroll"
         :scrollable="scrollable"
         @focus="handleFocus"
@@ -144,7 +143,12 @@ export default {
       scrollable: null,
       searchData: null,
       error: null,
-      isLoading: false
+      isLoading: false,
+      sourceIconScopes: [
+        'albums',
+        'albumGroups',
+        'tracks'
+      ]
     }
   },
   computed: {
@@ -269,8 +273,7 @@ export default {
         component:
           'BaseTagsSimpleList',
         limit:
-          tagsLimits.simple.small,
-        responsePageLimit: 10
+          tagsLimits.simple.small
       }
     },
     lyricsData () {
@@ -327,22 +330,6 @@ export default {
     responsePageLimit () {
       return this.scopeData.responsePageLimit
     },
-    isPaginationSimple () {
-      return (
-        this.isYouTubeSource ||
-          this.isYouTubeMusicSource
-      )
-    },
-    isYouTubeSource () {
-      return (
-        this.source === 'youtube'
-      )
-    },
-    isYouTubeMusicSource () {
-      return (
-        this.source === 'youtubemusic'
-      )
-    },
     component () {
       return this.scopeData.component
     },
@@ -356,19 +343,8 @@ export default {
       return !!this.scopeData.isWithListenersCount
     },
     isWithSource () {
-      return (
-        this.isTracks ||
-          this.isAlbums
-      )
-    },
-    isTracks () {
-      return (
-        this.scope === 'tracks'
-      )
-    },
-    isAlbums () {
-      return (
-        this.scope === 'albums'
+      return this.sourceIconScopes.includes(
+        this.scope
       )
     },
     isLastfmSource () {
