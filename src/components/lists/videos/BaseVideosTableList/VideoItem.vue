@@ -1,13 +1,29 @@
 <template>
   <BaseSimpleCardContainer
     :class="{
-      disabled: isDeleted
+      disabled: isDisabled
     }"
   >
     <BaseDeletedSection
       v-if="isDeleted"
       model="video"
     />
+    <template
+      v-else-if="isPrivate"
+    >
+      <div class="main-image-container video">
+        <BaseImage
+          class="rounded-medium"
+          model="video"
+        />
+      </div>
+
+      <BaseHeader
+        class="center aligned link"
+        tag="h4"
+        :text="videoTitle"
+      />
+    </template>
     <template
       v-else
     >
@@ -49,13 +65,24 @@
         />
       </BaseLinkContainer>
 
-      <div class="center aligned content">
+      <div class="center aligned content d-flex flex-column">
         <BaseVideoChannelLinkSection
           v-if="isWithChannelTitle"
           class="extra"
           :model-data="videoData"
           @link-click="handleLinkClick"
         />
+
+        <div
+          v-if="isWithViewsCount"
+          class="description align-self-center"
+        >
+          <BaseVideoViewsCount
+            :video-id="videoId"
+            :views-count="viewsCount"
+            @load-end="handleViewsCountLoadEnd"
+          />
+        </div>
 
         <BaseCreatedSection
           v-if="isWithCreated"
@@ -96,9 +123,13 @@ import BaseCreatedSection from '@/components/sections/BaseCreatedSection.vue'
 import BasePublishDateSection
   from '@/components/sections/BasePublishDateSection.vue'
 import BaseSelfIcons from '@/components/models/self/BaseSelfIcons.vue'
+import BaseVideoViewsCount
+  from '@/components/models/video/BaseVideoViewsCount.vue'
+
 import {
   main as formatVideoLink
 } from '@/helpers/formatters/links/video'
+
 import selfMixin from '@/mixins/selfMixin'
 
 export default {
@@ -113,7 +144,8 @@ export default {
     BaseVideoChannelLinkSection,
     BaseCreatedSection,
     BasePublishDateSection,
-    BaseSelfIcons
+    BaseSelfIcons,
+    BaseVideoViewsCount
   },
   mixins: [
     selfMixin
@@ -138,7 +170,8 @@ export default {
     isWithExternalLinkOption: Boolean,
     isWithDeleteOption: Boolean,
     isBookmark: Boolean,
-    isFavorite: Boolean
+    isFavorite: Boolean,
+    isWithViewsCount: Boolean
   },
   emits: [
     'linkClick'
@@ -161,7 +194,16 @@ export default {
       return this.videoData.source.id
     },
     videoTitle () {
-      return this.videoData.title
+      if (this.isPrivate) {
+        return this.$t(
+          'privateModel.video'
+        )
+      } else {
+        return this.videoData.title
+      }
+    },
+    isPrivate () {
+      return this.videoData.private
     },
     isDeleted () {
       return !!this.videoData.isDeleted
@@ -175,6 +217,12 @@ export default {
     },
     uuid () {
       return this.videoData.uuid
+    },
+    viewsCount () {
+      return this.videoData.views_count
+    },
+    isDisabled () {
+      return this.isDeleted || this.isPrivate
     }
   },
   methods: {
@@ -185,6 +233,11 @@ export default {
     },
     handleDeleted () {
       this.paginationItem.isDeleted = true
+    },
+    handleViewsCountLoadEnd (
+      value
+    ) {
+      this.paginationItem.views_count = value
     }
   }
 }

@@ -803,7 +803,8 @@
       font-size: 20px
   .extra
     line-height: 1.3rem
-    margin-top: 0.15rem
+    margin-top: 0.15rem !important
+    color: unset !important
   .description
     &:not(.right, .left)
       line-height: 1.1rem
@@ -858,7 +859,19 @@
       background: #0000000d !important
 
 .main-artist-popup
-  width: 460px
+  width: 420px
+  .base-options-popup-container
+    @extend .invisible-item, .absolute
+    bottom: 0
+    z-index: 10
+[dir="ltr"]
+  .main-artist-popup
+    .base-options-popup-container
+      right: 0
+[dir="rtl"]
+  .main-artist-popup
+    .base-options-popup-container
+      left: 0
 
 .main-annotation-popup
   width: 375px
@@ -1022,7 +1035,7 @@
     @extend .absolute, .no-right
 
 .main-button
-  @extend .no-margin
+  @extend .no-margin, .min-width-unset
   &.simple
     @extend .no-shadow
 
@@ -1122,6 +1135,8 @@
 .main-page-container
   @extend .plain-column
   min-height: calc(100vh - #{$mainContainerTopPadding} - #{$mainContainerBottomPadding}) !important
+  &.with-player
+    min-height: calc(100vh - #{$mainContainerTopPadding} - #{$mainContainerBottomPlayerPadding}) !important
 
 .main-page-segment-container
   @extend .plain-full
@@ -1147,6 +1162,8 @@
 .main-view
   padding-top: $mainContainerTopPadding
   padding-bottom: $mainContainerBottomPadding
+  &.with-player
+    padding-bottom: $mainContainerBottomPlayerPadding
 
 .main-popup-icon
   @extend .main-icon, .cursor-pointer

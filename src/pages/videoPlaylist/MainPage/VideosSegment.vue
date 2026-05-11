@@ -23,6 +23,8 @@
         is-with-share-option
         is-with-external-link-option
         is-with-description
+        is-with-views-count
+        is-with-duration
       />
     </template>
   </BasePaginatedSegmentContainer>

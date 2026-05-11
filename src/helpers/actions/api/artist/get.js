@@ -9,7 +9,8 @@ export default function (
     source = 'lastfm',
     artistName,
     artistId,
-    albumType = '',
+    artistSlug,
+    albumsType = '',
     scope = '',
     page,
     limit,
@@ -22,14 +23,15 @@ export default function (
         source,
         artistName,
         artistId,
+        artistSlug,
         scope
       }
     )
 
   const params = {
-    ...(albumType && {
-      album_type: snakeCase(
-        albumType
+    ...(albumsType && {
+      albums_type: snakeCase(
+        albumsType
       )
     }),
     ...(update && {

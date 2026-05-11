@@ -2,7 +2,7 @@
   <BaseLinkContainer
     class="item main-simple-list-item middle-aligned main-visibility-container"
     :class="{
-      disabled: isDeleted
+      disabled: isDisabled
     }"
     :link="link"
     @click="handleLinkClick"
@@ -11,6 +11,21 @@
       v-if="isDeleted"
       model="video"
     />
+    <template
+      v-else-if="isPrivate"
+    >
+      <BaseImage
+        class="rounded-medium video-image-120"
+        model="video"
+      />
+
+      <div class="content">
+        <BaseHeader
+          tag="h4"
+          :text="videoTitle"
+        />
+      </div>
+    </template>
     <template
       v-else
     >
@@ -37,12 +52,16 @@
           @active-change="handleChannelLinkActiveChange"
         />
 
-        <BaseListCounterSection
-          v-if="isRenderViewsCount"
+        <div
+          v-if="isWithViewsCount"
           class="description"
-          icon="watch"
-          :count="viewsCount"
-        />
+        >
+          <BaseVideoViewsCount
+            :video-id="videoId"
+            :views-count="viewsCount"
+            @load-end="handleViewsCountLoadEnd"
+          />
+        </div>
 
         <BaseDescriptionSection
           v-if="isRenderDescription"
@@ -119,13 +138,15 @@ import BaseVideoOptionsPopup
 import BaseClearButton from '@/components/buttons/BaseClearButton.vue'
 import BaseDurationSection
   from '@/components/sections/BaseDurationSection.vue'
-import BaseListCounterSection
-  from '@/components/sections/BaseListCounterSection.vue'
 import BaseDescriptionSection
   from '@/components/sections/BaseDescriptionSection.vue'
+import BaseVideoViewsCount
+  from '@/components/models/video/BaseVideoViewsCount.vue'
+
 import {
   main as formatVideoLink
 } from '@/helpers/formatters/links/video'
+
 import selfMixin from '@/mixins/selfMixin'
 
 export default {
@@ -142,8 +163,8 @@ export default {
     BaseVideoOptionsPopup,
     BaseClearButton,
     BaseDurationSection,
-    BaseListCounterSection,
-    BaseDescriptionSection
+    BaseDescriptionSection,
+    BaseVideoViewsCount
   },
   mixins: [
     selfMixin
@@ -188,11 +209,18 @@ export default {
       return this.videoData
     },
     link () {
-      return formatVideoLink(
-        {
-          videoId: this.videoId
-        }
-      )
+      if (this.isPrivate) {
+        return null
+      } else {
+        return formatVideoLink(
+          {
+            videoId: this.videoId
+          }
+        )
+      }
+    },
+    isPrivate () {
+      return this.videoData.private
     },
     videoId () {
       return this.videoData.source.id
@@ -201,7 +229,13 @@ export default {
       return this.videoData.image
     },
     videoTitle () {
-      return this.videoData.title
+      if (this.isPrivate) {
+        return this.$t(
+          'privateModel.video'
+        )
+      } else {
+        return this.videoData.title
+      }
     },
     uuid () {
       return this.videoData.uuid
@@ -227,12 +261,6 @@ export default {
         this.videoData.duration
       )
     },
-    isRenderViewsCount () {
-      return (
-        this.isWithViewsCount &&
-          this.viewsCount
-      )
-    },
     viewsCount () {
       return (
         this.videoData.views_count
@@ -246,6 +274,9 @@ export default {
     },
     description () {
       return this.videoData.description
+    },
+    isDisabled () {
+      return this.isDeleted || this.isPrivate
     }
   },
   methods: {
@@ -269,6 +300,11 @@ export default {
     },
     handleDeleted () {
       this.paginationItem.isDeleted = true
+    },
+    handleViewsCountLoadEnd (
+      value
+    ) {
+      this.paginationItem.views_count = value
     }
   }
 }

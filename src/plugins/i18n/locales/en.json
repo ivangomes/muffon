@@ -816,6 +816,9 @@
     "playlist": "Private",
     "profile": "Private"
   },
+  "privateModel": {
+    "video": "Private video"
+  },
   "donate": {
     "header": "Donate",
     "content": [
@@ -852,7 +855,9 @@
     "joinedDesc": "Most recently joined",
     "joinedAsc": "Least recently joined",
     "membersCountDesc": "Most members",
-    "membersCountAsc": "Least members"
+    "membersCountAsc": "Least members",
+    "listenersCountDesc": "Most listeners",
+    "listenersCountAsc": "Least listeners"
   },
   "deletedModel": {
     "profile": "Deleted profile",

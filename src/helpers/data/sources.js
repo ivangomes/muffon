@@ -1,22 +1,40 @@
 export default [
-  // {
-  //   id: 'amazonmusic',
-  //   icon: 'amazonmusic',
-  //   name: 'Amazon Music',
-  //   isAudio: true,
-  //   isWithArtists: true,
-  //   isWithAlbums: true,
-  //   isWithTracks: true,
-  //   maxBitrate: 160,
-  //   albumTypes: [
-  //     'album'
-  //   ],
-  //   searchScopes: [
-  //     'artists',
-  //     'albums',
-  //     'tracks'
-  //   ]
-  // },
+  {
+    id: 'amazonmusic',
+    icon: 'amazonmusic',
+    name: 'Amazon Music',
+    isAudio: true,
+    isWithArtists: true,
+    isWithAlbums: true,
+    isWithTracks: true,
+    maxBitrate: 160,
+    albumTypes: [
+      'album'
+    ],
+    searchScopes: [
+      'artists',
+      'albums',
+      'tracks'
+    ]
+  },
+  {
+    id: 'audius',
+    icon: 'audius',
+    name: 'Audius',
+    isAudio: true,
+    isWithArtists: true,
+    isWithAlbums: true,
+    isWithTracks: true,
+    maxBitrate: 320,
+    albumTypes: [
+      'album'
+    ],
+    searchScopes: [
+      'artists',
+      'albums',
+      'tracks'
+    ]
+  },
   {
     id: 'bandcamp',
     icon: 'bandcamp',
@@ -100,8 +118,8 @@ export default [
     ],
     albumsTypes: [
       'album',
-      'single',
       'ep',
+      'single',
       'compilation',
       'live',
       'misc'
@@ -118,10 +136,16 @@ export default [
     icon: 'musixmatch',
     name: 'MusixMatch',
     isWithArtists: true,
+    isWithAlbums: true,
     isWithTracks: true,
     isWithLyrics: true,
     albumTypes: [
       'album'
+    ],
+    albumsTypes: [
+      'album',
+      'ep',
+      'single'
     ],
     searchScopes: [
       'artists',
@@ -179,9 +203,7 @@ export default [
     ],
     albumsTypes: [
       'album',
-      'single',
-      'compilation',
-      'appearance'
+      'singleEp'
     ],
     searchScopes: [
       'artists',
@@ -242,15 +264,21 @@ export default [
     name: 'YouTube Music',
     isAudio: true,
     isVideo: true,
-    isWithTracks: true,
+    isWithArtists: true,
     isWithAlbums: true,
+    isWithTracks: true,
     maxBitrate: 128,
     albumTypes: [
       'album'
     ],
+    albumsTypes: [
+      'album',
+      'singleEp'
+    ],
     searchScopes: [
-      'tracks',
+      'artists',
       'albums',
+      'tracks',
       'videos',
       'videoMixes',
       'videoPlaylists'

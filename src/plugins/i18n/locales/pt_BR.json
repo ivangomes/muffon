@@ -666,9 +666,9 @@
       "content": "Agora você pode voltar e fazer login"
     }
   },
-  "anonymous": {
-    "continue": "Continuar como anônimo",
-    "nickname": "Anônimo"
+  "guest": {
+    "continue": "Continuar como convidado",
+    "nickname": "Convidado"
   },
   "roles": {
     "creator": "Criador"
